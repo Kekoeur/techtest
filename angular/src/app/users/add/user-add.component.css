@@ -7,7 +7,11 @@
 }
 
 #form-user button:disabled {
-  --pill-accent: var(--grey-700);
+  --pill-accent: var(--gray-700);
+}
+
+#form-user button:disabled:hover {
+  background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
 }
 
 .form-input {
