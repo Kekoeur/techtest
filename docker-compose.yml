@@ -30,8 +30,6 @@ services:
       dockerfile: .docker/angular/Dockerfile
     container_name: angular
     restart: unless-stopped
-    environment:
-      - CHROME_BIN=/usr/bin/chromium-browser
     ports:
       - ${NG_PORT}:4200
     volumes:

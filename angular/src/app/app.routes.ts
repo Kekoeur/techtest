@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { UserListComponent } from './users/user-list.component';
+import { UserListComponent } from './users/list/user-list.component';
 import { UserAddComponent } from './users/add/user-add.component';
 import { AppSocialComponent } from './social/social.component';
 

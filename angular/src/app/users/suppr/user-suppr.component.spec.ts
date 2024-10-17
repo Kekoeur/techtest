@@ -39,13 +39,13 @@ describe('UserSupprComponent', () => {
 
   it('should remove the user from the user list after deletion', () => {
     const initialUserList = [
-      { id: 1, firstName: 'John', lastName: 'Doe', fullName: 'John Doe' },
-      { id: 2, firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe' }
+      { id: 1, firstName: 'Christopher', lastName: 'Gauthier', fullName: 'Christopher Gauthier' },
+      { id: 2, firstName: 'Caroline', lastName: 'Gauthier', fullName: 'Caroline Gauthier' }
     ];
   
     userServiceSpy.users = initialUserList;
   
-    const mockNewUserList = [{ id: 2, firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe' }];
+    const mockNewUserList = [{ id: 2, firstName: 'Caroline', lastName: 'Gauthier', fullName: 'Caroline Gauthier' }];
   
     userServiceSpy.SupprUser.and.returnValue(of(mockNewUserList));
   
@@ -53,12 +53,12 @@ describe('UserSupprComponent', () => {
   
     expect(userServiceSpy.SupprUser).toHaveBeenCalledWith('1');
     expect(userServiceSpy.users).toEqual(mockNewUserList);
-    expect(userServiceSpy.users).not.toContain({ id: 1, firstName: 'John', lastName: 'Doe', fullName: 'John Doe' });
+    expect(userServiceSpy.users).not.toContain({ id: 1, firstName: 'Christopher', lastName: 'Gauthier', fullName: 'Christopher Gauthier' });
   });
   
 
   it('should call deleteUser and emit userDeleted on successful deletion', () => {
-    const mockNewUserList = [{ id: 2, firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe' }];
+    const mockNewUserList = [{ id: 2, firstName: 'Caroline', lastName: 'Gauthier', fullName: 'Caroline Gauthier' }];
 
     userServiceSpy.SupprUser.and.returnValue(of(mockNewUserList));
 

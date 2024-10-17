@@ -38,18 +38,18 @@ describe('UserAddComponent', () => {
   });
 
   it('should call addUser from UserService when form is valid and submitted', () => {
-    const mockUser = { id: 1, firstName: 'John', lastName: 'Doe', fullName: 'John Doe' };
+    const mockUser = { id: 1, firstName: 'Christopher', lastName: 'Gauthier', fullName: 'Christopher Gauthier' };
     
     component.addUserForm.setValue({firstName: mockUser.firstName, lastName: mockUser.lastName});
     userServiceSpy.addUser.and.returnValue(of(mockUser));
     component.onSubmit();
 
     expect(userServiceSpy.addUser).toHaveBeenCalledWith({firstName: mockUser.firstName, lastName: mockUser.lastName});
-    expect(component.text).toBe(`L'utilisateur John Doe a été ajouté.`);
+    expect(component.text).toBe(`L'utilisateur Christopher Gauthier a été ajouté.`);
   });
 
   it('should handle user already exists error (409)', () => {
-    const mockUser = { id: 2, firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe' };
+    const mockUser = { id: 2, firstName: 'Caroline', lastName: 'Gauthier', fullName: 'Caroline Gauthier' };
 
     component.addUserForm.setValue({firstName: mockUser.firstName, lastName: mockUser.lastName});
     userServiceSpy.addUser.and.returnValue(throwError({ status: 409 }));
@@ -59,7 +59,7 @@ describe('UserAddComponent', () => {
   });
 
   it('should handle server error (500)', () => {
-    const mockUser = { id: 2, firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe' };
+    const mockUser = { id: 2, firstName: 'Caroline', lastName: 'Gauthier', fullName: 'Caroline Gauthier' };
 
     component.addUserForm.setValue({firstName: mockUser.firstName, lastName: mockUser.lastName});
     userServiceSpy.addUser.and.returnValue(throwError({ status: 500 }));
@@ -69,7 +69,7 @@ describe('UserAddComponent', () => {
   });
 
   it('should reset the form after submission', () => {
-    const mockUser = { id: 2, firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe' };
+    const mockUser = { id: 2, firstName: 'Caroline', lastName: 'Gauthier', fullName: 'Caroline Gauthier' };
 
     component.addUserForm.setValue({firstName: mockUser.firstName, lastName: mockUser.lastName});
     userServiceSpy.addUser.and.returnValue(of(mockUser));

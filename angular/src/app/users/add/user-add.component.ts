@@ -21,8 +21,8 @@ export class UserAddComponent {
 
   constructor(private userService: UserService, private fb: FormBuilder) {
     this.addUserForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required]
+      firstName: ['', [Validators.required, Validators.pattern('^[a-zA-ZÀ-ÿ\\- \']*')]],
+      lastName: ['', [Validators.required, Validators.pattern('^[a-zA-ZÀ-ÿ\\- \']*')]]
     });
   }
 

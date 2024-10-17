@@ -1,9 +1,9 @@
 import { Component, OnInit, Inject  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UserService } from './user.service';
-import { User } from './user.interface';
-import { UserSupprComponent } from './suppr/user-suppr.component';
+import { UserService } from '../user.service';
+import { User } from '../user.interface';
+import { UserSupprComponent } from '../suppr/user-suppr.component';
 
 @Component({
   selector: 'users',

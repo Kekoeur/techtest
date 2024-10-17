@@ -2,8 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 
 import { UserListComponent } from './user-list.component';
-import { UserService } from './user.service';
-import { User } from './user.interface';
+import { UserService } from '../user.service';
+import { User } from '../user.interface';
 
 describe('UserListComponent', () => {
   let component: UserListComponent;
@@ -23,8 +23,8 @@ describe('UserListComponent', () => {
     userServiceSpy = TestBed.inject(UserService) as jasmine.SpyObj<UserService>;
 
     const mockUsers: User[] = [
-      { id: 1, firstName: 'John', lastName: 'Doe', fullName: 'John Doe' },
-      { id: 2, firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe' }
+      { id: 1, firstName: 'Christopher', lastName: 'Gauthier', fullName: 'Christopher Gauthier' },
+      { id: 2, firstName: 'Caroline', lastName: 'Gauthier', fullName: 'Caroline Gauthier' }
     ];
     userServiceSpy.getUsers.and.returnValue(of(mockUsers));
 
@@ -39,7 +39,7 @@ describe('UserListComponent', () => {
     component.ngOnInit();
 
     expect(component.users.length).toBe(2);
-    expect(component.users[0].firstName).toBe('Jane');
+    expect(component.users[0].firstName).toBe('Caroline');
   });
 
   it('should render users list sort in the template', () => {
@@ -50,7 +50,7 @@ describe('UserListComponent', () => {
     const userListItems = compiled.querySelectorAll('li');
 
     expect(userListItems.length).toBe(2);
-    expect(userListItems[0].textContent).toContain('Jane Doe');
-    expect(userListItems[1].textContent).toContain('John Doe');
+    expect(userListItems[0].textContent).toContain('Caroline Gauthier');
+    expect(userListItems[1].textContent).toContain('Christopher Gauthier');
   });
 });
