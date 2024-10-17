@@ -156,13 +156,9 @@ Dans le fichier user.controller.ts j'ai 3 fonctions qui gère les 3 types de req
   On enregistre ces valeurs pour plus tard.
   On refait pareil mais en utilisant une autre fonction présente dans la class, qui en plus transforme la chaîme en minuscule.
   Avec ces valeurs on vérifie si il n'éxiste pas dans la liste des utilisateurs en BDD un utilisateur avec le même prénom et même nom un fois transformé en minuscule.
-
   Si il existe on retourne une erreur avec un status 409 (CONFLICT), c'est cette valeur qu'on récupère avec Angular lors de duplication d'un utilisateur
-
   Sinon, on récupère l'id maximal présent dans la liste des utilisateurs, on ajoute 1 a cette valeuret on se retrouve avec un id dont on est certains qu'il sera unique
-
   On créer un utilisateur avec la classe User avec en paramètre l'id, le nom et le prénom
-
   Ensuite on essaye d'utiliser le service AddUser avec ce nouvelle utilisateur, si cela fonction on retourne le nouvelle utilisateur
   Sinon on envoie une erreur 500 pour dire qu'il y a eu une erreur lors de l'ajout de l'utilisateur.
 
