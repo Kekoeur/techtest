@@ -1,0 +1,14 @@
+<div id="list-users">
+  <h1 class="title-component">Liste des utilisateurs</h1>
+
+  <div class="divider-horizontal"></div>
+  
+  <ol class="scrollbar-custom">
+    <li *ngFor="let user of users" >
+      <div class="user-list-item">
+        <p>{{ user.fullName }}</p>
+        <user-suppr class="user-suppr" [userId]="user.id" (userDeleted)="refreshUserList()"></user-suppr>
+      </div>
+    </li>
+  </ol>
+</div>

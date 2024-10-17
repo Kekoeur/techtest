@@ -1,0 +1,33 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation button {
+  width: 48%;
+  display: inline-block;
+}
+
+.list {
+  --pill-accent: var(--bright-blue);
+}
+
+.add {
+  --pill-accent: var(--french-violet);
+}
+
+.home {
+  --pill-accent: var(--hot-red);
+}
+
+@media screen and (max-width: 800px) {
+  .navigation {
+    flex-direction: column;
+  }
+  .navigation button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}

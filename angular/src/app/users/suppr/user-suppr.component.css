@@ -1,0 +1,73 @@
+.btn-suppr {
+  height: 100%;
+  border-radius: 0 0.5rem 0.5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: color-mix(in srgb, var(--hot-red) 5%, transparent);
+  color: var(--hot-red);
+  border: none;
+  padding: 0 0.5rem 0 1rem;
+}
+
+.btn-suppr:hover {
+  background-color: color-mix(in srgb, var(--hot-red) 15%, transparent);
+}
+
+.btn-suppr svg {
+  width: 12px;
+  height: 12px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.close {
+  font-size: 24px;
+  cursor: pointer;
+  text-align: end;
+}
+
+.modal-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.modal-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-btn button {
+  width: 48%;
+  display: inline-block;
+}
+
+.confirm {
+  --pill-accent: var(--bright-blue);
+}
+.cancel {
+  --pill-accent: var(--hot-red);
+}

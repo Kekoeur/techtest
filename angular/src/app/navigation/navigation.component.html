@@ -1,0 +1,10 @@
+<div class="navigation">
+  <button class="pill list" *ngIf="currentRoute === '/' " (click)="navigateTo('/users')">Liste des utilisateurs</button>
+  <button class="pill add" *ngIf="currentRoute === '/' " (click)="navigateTo('/user/add')">Ajouter un utilisateur</button>
+
+  <button class="pill home" *ngIf="currentRoute === '/users'" (click)="navigateTo('/')">Acceuil</button>
+  <button class="pill add" *ngIf="currentRoute === '/users'" (click)="navigateTo('/user/add')">Ajouter un utilisateur</button>
+
+  <button class="pill home" *ngIf="currentRoute === '/user/add'" (click)="navigateTo('/')">Acceuil</button>
+  <button class="pill list" *ngIf="currentRoute === '/user/add'" (click)="navigateTo('/users')">Liste des utilisateurs</button>
+</div>

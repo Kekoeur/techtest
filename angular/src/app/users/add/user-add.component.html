@@ -1,0 +1,34 @@
+<div id="user-add">
+  <h1 class="title-component">Ajouter un utilisateur</h1>
+
+  <div class="divider-horizontal"></div>
+
+  <form id="form-user" [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+    <div class="flex-col-center form-input">
+      <label for="firstName">Votre prénom: </label>
+      <div class="form-input-field">
+      <input id="firstName" formControlName="firstName" placeholder="Prénom" />
+      </div>
+    </div>
+  
+    <div class="flex-col-center form-input">
+      <label for="lastName">Votre nom de famille: </label>
+      <div class="form-input-field">
+      <input id="lastName" formControlName="lastName" placeholder="Nom de famille" />
+      </div>
+    </div>
+  
+    <button class="pill" type="submit" [disabled]="addUserForm.invalid || isSubmitting">Ajouter l'utilisateur</button>
+  </form>
+
+  <div id="display-msg">
+    <div *ngIf="result === true" class="success-message">
+      <div class="divider-horizontal"></div>
+      {{ text }}
+    </div>
+    <div *ngIf="result === false" class="error-message">
+      <div class="divider-horizontal"></div>
+      {{ text }} Réessayer !
+    </div>
+  </div>
+</div>
