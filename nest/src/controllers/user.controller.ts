@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 
 import { AddUser } from 'src/application/use-cases/addUser';
-import { GetFullNamesOfAllUsers } from 'src/application/use-cases/getFullNameOfAllUsers';
+import { GetAllUsers } from 'src/application/use-cases/getAllUsers';
 import { SupprUser } from 'src/application/use-cases/SupprUser'
 import { User } from 'src/domain/entities/user';
 
@@ -9,13 +9,13 @@ import { User } from 'src/domain/entities/user';
 
 export class UserController {
   constructor(
-    private useCase: GetFullNamesOfAllUsers,
+    private useCase: GetAllUsers,
     private userAdd: AddUser,
     private userSuppr: SupprUser
   ) {}
 
   @Get('/users')
-  async getFullNamesOfAllUsers(): Promise<User[]> {
+  async getAllUsers(): Promise<User[]> {
     return await this.useCase.execute();
   }
 
